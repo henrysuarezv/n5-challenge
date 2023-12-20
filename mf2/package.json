@@ -1,5 +1,5 @@
 {
-  "name": "@henrysuarezv/mf1",
+  "name": "@henrysuarezv/mf2",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
@@ -55,12 +55,10 @@
     "@types/react-dom": "^17.0.9",
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
-    "i18next": "^23.7.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-i18next": "^13.5.0",
     "single-spa": "^5.9.3",
     "single-spa-react": "^4.3.1"
   },
-  "types": "dist/henrysuarezv-mf1.d.ts"
+  "types": "dist/henrysuarezv-mf2.d.ts"
 }
