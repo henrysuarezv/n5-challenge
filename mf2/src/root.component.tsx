@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
 import { Provider } from "react-redux";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { RequestProvider } from "./context/requestContext";
 import Home from "./pages/home";

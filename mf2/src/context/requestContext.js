@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { createContext, useContext, useState } from "react";
-import { requestCharacterRequest } from "../api/requestCharacter";
+import { useDispatch } from "react-redux";
 
+import { requestCharacterRequest } from "../api/requestCharacter";
+import { SAVE_DATA_CHARACTERS } from "../actions/characterActions";
 
 const RequestContext = createContext();
 
@@ -12,26 +14,32 @@ export const useRequest = () => {
 };
 
 export const RequestProvider = ({ children }) => {
-
-    const [characters, setCharacters] = useState(null);
+    const dispatch = useDispatch();
+    //const [characters, setCharacters] = useState(null);
     const [errors, setErrors] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setErrors([]);
-        }, 5000);
-        return () => clearTimeout(timer);
-
-    }, [errors, characters]);
+        if (errors.length > 0) {
+            const timer = setTimeout(() => {
+                setErrors([]);
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [errors]);
 
     const requestCharacter = async (characters) => {
+        setLoading(true);
         try {
             const res = await requestCharacterRequest(characters);
             if (res.status === 200) {
-                setCharacters(true);
+                dispatch(SAVE_DATA_CHARACTERS(res.data.data))
+                //setCharacters(res.data.data);
             }
         } catch (error) {
             setErrors(error.response.data.message);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -39,8 +47,8 @@ export const RequestProvider = ({ children }) => {
         <RequestContext.Provider
             value={{
                 requestCharacter,
-                errors,
-                characters
+                loading,
+                //characters
             }}
         >
             {children}

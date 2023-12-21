@@ -1,10 +1,10 @@
 const initialProps = {
-    showAlert: false,
+    characters: [],
 }
 
 export const CharacterReducer = (state = initialProps, action) => {
     switch (action.type) {
-        case 'GET_CHARACTERS':
+        case 'SAVE_CHARACTERS':
             return {
                 ...state,
                 characters: action.payload
