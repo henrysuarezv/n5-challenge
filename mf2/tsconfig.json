@@ -4,15 +4,9 @@
     "jsx": "react-jsx",
     "declaration": true,
     "declarationDir": "dist",
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
-  "files": [
-    "src/henrysuarezv-mf2.tsx"
-  ],
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "src/**/*.test*"
-  ]
+  "files": ["src/henrysuarezv-mf2.tsx"],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"]
 }

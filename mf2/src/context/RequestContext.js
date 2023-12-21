@@ -23,7 +23,7 @@ export const RequestProvider = ({ children }) => {
     try {
       const res = await requestCharacterRequest(characters);
       if (res.status === 200) {
-        dispatch(SAVE_DATA_CHARACTERS(res.data.data))
+        dispatch(SAVE_DATA_CHARACTERS(res.data.data));
       }
     } catch (error) {
       setErrors(error.response.data.message);
@@ -37,7 +37,7 @@ export const RequestProvider = ({ children }) => {
       value={{
         requestCharacter,
         loading,
-        errors
+        errors,
       }}
     >
       {children}

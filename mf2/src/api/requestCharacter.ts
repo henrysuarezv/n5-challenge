@@ -1,6 +1,6 @@
-import axios from "./axios";
+import axiosInstance from "./axios";
 
 export const requestCharacterRequest = async (requestCharacter: string) => {
-    const encodedRequestCharacter = encodeURIComponent(requestCharacter);
-    return axios.get(`/character?films=${encodedRequestCharacter}`)
+  const encodedRequestCharacter = encodeURIComponent(requestCharacter);
+  return axiosInstance.get(`/character?films=${encodedRequestCharacter}`);
 };
