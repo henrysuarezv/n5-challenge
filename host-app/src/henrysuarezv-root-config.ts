@@ -4,18 +4,10 @@ import {
   constructRoutes,
   constructLayoutEngine,
 } from "single-spa-layout";
-import { I18n } from "i18n-js";
-import microfrontendLayout from "./microfrontend-layout.html";
 
-const i18n = new I18n({
-  en: { "translateButton": "Change language" },
-  es: { "translateButton": "Cambiar idioma" },
-});
-i18n.locale = "en";
-const globalConfig = {
-  i18n,
-};
-(window as any).globalConfig = globalConfig;
+import microfrontendLayout from "./microfrontend-layout.html";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import i18n from "./i18n";
 
 const routes = constructRoutes(microfrontendLayout);
 const applications = constructApplications({

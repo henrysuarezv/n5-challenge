@@ -76,18 +76,16 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <button id="translateButton">Change languague</button>
-  </nav>
   <script>
-    document.getElementById('translateButton').addEventListener('click', function () {
-      console.log(globalConfig.i18n.locale);
-      globalConfig.i18n.locale = globalConfig.i18n.locale === "es" ? "en" : "es";
-      const translateButton = document.getElementById('translateButton');
-      if (translateButton) {
-        translateButton.innerText = globalConfig.i18n.t('translateButton');
-      }
-    });
+    setTimeout(() => {
+      document.getElementById('translateButton').addEventListener('click', function () {
+        globalConfig.i18n.locale = globalConfig.i18n.locale === "es" ? "en" : "es";
+        const translateButton = document.getElementById('translateButton');
+        if (translateButton) {
+          translateButton.innerText = globalConfig.i18n.t('translateButton');
+        }
+      });
+    }, 1000)
   </script>
   <noscript>
     You need to enable JavaScript to run this app.
