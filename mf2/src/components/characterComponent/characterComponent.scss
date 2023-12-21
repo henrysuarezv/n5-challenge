@@ -1,5 +1,8 @@
 .characterComponent {
-    &__image {
-        // max-width: 150px;
+    &__image:hover {
+        opacity: 0.5;
+    }
+    &__titles{
+        text-decoration: underline;
     }
 }

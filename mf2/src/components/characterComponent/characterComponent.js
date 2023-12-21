@@ -10,20 +10,22 @@ const CharacterComponent = ({ item }) => {
 
     if (item) {
         return (
-            <Card className="characterComponent p-0 item-card-menu" >
+            <Card className="characterComponent p-4 item-card-menu" >
                 <Card.Img className="characterComponent__image item-image-menu"
                     src={item.imageUrl}
                     variant="top"
                 />
                 <Card.Body className="characterComponent__body p-1 item-body-menu">
-                    <Card.Title className="characterComponent__title m-0 item-title-menu"><b>{t('characterComponent.name')}:</b> {item.name}</Card.Title>
+                    <Card.Title className="m-0 item-title-menu"><b>{t('characterComponent.name')}:</b> {item.name}</Card.Title>
                     <ListGroup variant="flush">
-                        <ListGroup.Item><b>{t('characterComponent.tvShows')}:{item.tvShows.join(", ")}</b></ListGroup.Item>
-                        <ListGroup.Item><b>{t('characterComponent.videoGames')}:{item.videoGames.join(", ")}</b></ListGroup.Item>
-                        <ListGroup.Item><b>{t('characterComponent.enemies')}:{item.enemies.join(", ")}</b></ListGroup.Item>
+                        <div><b className="characterComponent__titles">{t('characterComponent.tvShows')}: </b>{item.tvShows.join(", ")}</div>
+                        <div><b className="characterComponent__titles">{t('characterComponent.videoGames')}: </b>{item.videoGames.join(", ")}</div>
+                        <div><b className="characterComponent__titles">{t('characterComponent.enemies')}: </b>{item.enemies.join(", ")}</div>
                     </ListGroup>
-                    <Card.Link href={item.sourceUrl}>{t('characterComponent.moreInfo')}</Card.Link>
                 </Card.Body>
+                <Card.Footer>
+                    <Card.Link href={item.sourceUrl}>{t('characterComponent.moreInfo')}</Card.Link>
+                </Card.Footer>
             </Card>
         );
     }
