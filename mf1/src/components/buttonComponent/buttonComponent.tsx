@@ -10,8 +10,10 @@ export interface IButtonComponent {
 
 const ButtonComponent = ({ name, label, isActive, handleSelection }: IButtonComponent) => {
     const { t } = useTranslation();
-    return (<Button variant={isActive ? "primary" : "outline-primary"} active={isActive} size="sm" onClick={() => handleSelection(name)}>
-        {t("components.buttonComponent.label")} {label}
-    </Button>)
+    return (
+        <Button variant={isActive ? "primary" : "outline-primary"} active={isActive} size="sm" onClick={() => handleSelection(name)}>
+            {t("components.buttonComponent.label")} {label}
+        </Button>
+    )
 };
 export default ButtonComponent;

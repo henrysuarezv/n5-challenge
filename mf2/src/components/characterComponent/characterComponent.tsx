@@ -1,31 +1,62 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useTranslation } from "react-i18next";
+import styled from 'styled-components';
 
-import "./characterComponent.scss";
+const ItemTextContainer = styled.div`
+        color: gray;
+    `;
+const ItemTextTitle = styled.div`
+        text-decoration: underline;
+        color: black;
+    `;
+const StyledCardImg = styled(Card.Img)`
+    &:hover {        
+        opacity: 0.6;
+    }
+`;
+
+const StyledCard = styled(Card)`
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    &:hover {
+        z-index:5;
+        transform: scale(1.05); /* Zoom in on hover */
+    }
+`;
 
 const CharacterComponent = ({ item }) => {
     const { t } = useTranslation();
 
     if (item) {
         return (
-            <Card className="characterComponent p-4 item-card-menu" >
-                <Card.Img className="characterComponent__image item-image-menu"
+            <StyledCard className="characterComponent p-4" >
+                <StyledCardImg
                     src={item.imageUrl}
                     variant="top"
+                    alt={t('characterComponent.characterImageAlt', { characterName: item.name })}
                 />
-                <Card.Body className="characterComponent__body p-1 item-body-menu">
-                    <Card.Title className="m-0 item-title-menu"><b>{t('characterComponent.name')}:</b> {item.name}</Card.Title>
+                <Card.Body className="characterComponent__body p-1">
+                    <Card.Title className="m-0"><b>{t('characterComponent.name')}:</b> {item.name}</Card.Title>
                     <ListGroup variant="flush">
-                        <div><b className="characterComponent__titles">{t('characterComponent.tvShows')}: </b>{item.tvShows.join(", ")}</div>
-                        <div><b className="characterComponent__titles">{t('characterComponent.videoGames')}: </b>{item.videoGames.join(", ")}</div>
-                        <div><b className="characterComponent__titles">{t('characterComponent.enemies')}: </b>{item.enemies.join(", ")}</div>
+                        <ItemTextContainer>
+                            <ItemTextTitle >{t('characterComponent.tvShows')}: </ItemTextTitle>{item.tvShows.join(", ")}
+                        </ItemTextContainer>
+                        <ItemTextContainer>
+                            <ItemTextTitle >{t('characterComponent.videoGames')}: </ItemTextTitle>{item.videoGames.join(", ")}
+                        </ItemTextContainer>
+                        <ItemTextContainer>
+                            <ItemTextTitle >{t('characterComponent.enemies')}: </ItemTextTitle>{item.enemies.join(", ")}
+                        </ItemTextContainer>
                     </ListGroup>
                 </Card.Body>
                 <Card.Footer>
-                    <Card.Link href={item.sourceUrl}>{t('characterComponent.moreInfo')}</Card.Link>
+                    <Card.Link target="_blank" rel="noopener noreferrer" href={item.sourceUrl}>
+                        {t('characterComponent.moreInfo')}
+                    </Card.Link>
                 </Card.Footer>
-            </Card>
+            </StyledCard>
         );
     }
     return null;
