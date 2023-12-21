@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Spinner from "react-bootstrap/Spinner";
-import Container from "react-bootstrap/Container";
 import { useTranslation } from "react-i18next";
 
-import { useRequest } from "../../context/requestContext";
+import { useRequest } from "../../context/RequestContext";
 import CharacterComponent from "../characterComponent/characterComponent";
 import CharacterSelector from "../../selectors/characterSelector";
 
@@ -18,7 +17,7 @@ const CharacterContainerComponent = () => {
     const [movie, setMovie] = useState("");
 
     useEffect(() => {
-        document.addEventListener("renderSerie", (event) => {
+        document.addEventListener("renderSerie", (event: CustomEvent) => {
             setMovie(event.detail.data)
             requestCharacter(event.detail.data);
         });

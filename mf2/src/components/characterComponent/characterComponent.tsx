@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from 'react-bootstrap/ListGroup';
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 import "./characterComponent.scss";
