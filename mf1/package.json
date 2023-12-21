@@ -57,6 +57,7 @@
     "@types/webpack-env": "^1.16.2",
     "i18next": "^23.7.11",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.9.1",
     "react-dom": "^17.0.2",
     "react-i18next": "^13.5.0",
     "single-spa": "^5.9.3",

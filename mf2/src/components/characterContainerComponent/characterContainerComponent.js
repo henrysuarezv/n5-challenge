@@ -31,7 +31,7 @@ const CharacterContainerComponent = () => {
     }
     if (characterSelector.characters && characterSelector.characters.length > 0) {
         return (
-            <Container>
+            <div>
                 <h1>{t('characterContainerComponent.title')} : {movie}</h1>
                 <Row xs={1} md={4} className="g-4" >
                     {characterSelector.characters.map((item) => (
@@ -40,7 +40,7 @@ const CharacterContainerComponent = () => {
                         </Col>
                     ))}
                 </Row>
-            </Container>
+            </div>
         );
     }
     return null;

@@ -1,7 +1,7 @@
 import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
-i18n  
-  .use(initReactI18next)  
+i18n
+  .use(initReactI18next)
   .init({
     debug: true,
     fallbackLng: 'en',
@@ -11,23 +11,35 @@ i18n
     resources: {
       en: {
         translation: {
-          sections: {
-            home: 'Home',
-            shop: 'Shop',
-            about: 'About',
-            contactus: 'Contact Us',
-            favorites: 'Favorites'
+          components: {
+            buttonContainer: {
+
+            },
+            buttonComponent: {
+              label: "Get characters of"
+            }
+          },
+          pages: {
+            home: {
+              label: "Select movie"
+            }
           }
         }
       },
       es: {
         translation: {
-          sections: {
-            home: 'Inicio',
-            shop: 'Tienda',
-            about: 'Nosotros',
-            contactus: 'Contactanos',
-            favorites: 'Mis favoritos'
+          components: {
+            buttonContainer: {
+
+            },
+            buttonComponent: {
+              label: "Mostrar personajes de"
+            }
+          },
+          pages: {
+            home: {
+              label: "Selecciona una pelicula"
+            }
           }
         }
       }
