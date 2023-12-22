@@ -26,7 +26,7 @@ Microfrontends communicate seamlessly through custom events.
 ## Project Structure
 
 ```plaintext
-microfrontend-sample/
+n5-challenge/
 |-- host-app/
 |   |-- src/
 |   |-- webpack.config.js
@@ -43,12 +43,12 @@ microfrontend-sample/
 1. **Clone the repository:**
 
 ```bash
-   git clone https://github.com/your-username/microfrontend-sample.git
+   git clone https://github.com/henrysuarezv/n5-challenge.git
 ```
 
 2. **Install dependencies for each project:**
 ```bash
-    cd microfrontend-sample/host-app
+    cd n5-challenge/host-app
     npm install
 
     cd ../mf1
@@ -60,7 +60,7 @@ microfrontend-sample/
 
 3. **Build the projects:**
 ```bash
-    cd microfrontend-sample/host-app
+    cd n5-challenge/host-app
     npm run build
 
     cd ../mf1
@@ -74,21 +74,21 @@ microfrontend-sample/
 
 1. **Start the host application:**
 ```bash
-   cd microfrontend-sample/mf1
+   cd n5-challenge/mf1
    npm start
 ```
 The host application will be available at http://localhost:9000.
 
 2. **Open a new terminal window and start microfrontend 1:**
 ```bash
-   cd microfrontend-sample/mf1
+   cd n5-challenge/mf1
    npm start
 ```
 Microfrontend 1 will be available at http://localhost:9994.
 
 3. **Open another terminal window and start microfrontend 2:**
 ```bash
-   cd microfrontend-sample/mf2
+   cd n5-challenge/mf2
     npm start
 ```
 Microfrontend 1 will be available at http://localhost:9995.
