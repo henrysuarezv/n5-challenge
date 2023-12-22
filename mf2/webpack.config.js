@@ -25,6 +25,9 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       ],
     },
+    devServer: {
+      port: 9995, // Set your desired port here
+    },
     // modify the webpack config however you'd like to by adding to this object
   });
 };
