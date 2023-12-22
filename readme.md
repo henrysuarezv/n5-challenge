@@ -9,6 +9,7 @@ This project is a demonstration of a microfrontend architecture using single-spa
 - [Getting Started](#getting-started)
 - [Running the Application](#running-the-application)
 - [Contributing](#contributing)
+- [Screenshots](#screenshots)
 - [Questions](#questions)
 
 ## Introduction
@@ -99,6 +100,11 @@ Visit the host application URL (http://localhost:9000) in your browser to see th
 
 Contributions are welcome! If you find a bug or have suggestions for improvement, please open an issue or submit a pull request.
 
+## screenshots
+![Screenshot 1](Screenshot_20231222_144303.png)
+![Screenshot 1](Screenshot_20231222_144325.png)
+![Screenshot 1](Screenshot_20231222_144352.png)
+
 ## Questions
 1. **What is accessibility? How do you achieve it?:**
 Accessibility is making websites and apps easy to use for everyone, including people with disabilities. To achieve accessibility, developers use good code, provide descriptions for images, make sure things work with a keyboard, and test with tools that help people with disabilities.
@@ -138,3 +144,5 @@ Accessibility is making websites and apps easy to use for everyone, including pe
     - Faster initial load times.
     - Improved perceived performance for users.
     - Better user experience, especially on slower network connections.
+
+
